@@ -767,6 +767,8 @@ span.contact__detail-icon {
     }
 }
 
+
+@media (min-width: 768px) {
     #closePopup{
             font-size: 20px;
             cursor: pointer;
@@ -826,3 +828,4 @@ span.contact__detail-icon {
             color: #64B5F6;
             text-decoration: underline;
         }
+}
