@@ -309,17 +309,17 @@ border-right-width: 4px;
 .projects {
   background: #000;
   padding-bottom: 80px;
-  cursor: url(https://arpan-portfolio.infy.uk/assets/cursor/arrow_cursor.png),
+  cursor: url(/portfolio/assets/cursor/arrow_cursor.png),
     auto;
 }
 .projects h2,
 .projects p {
-  cursor: url(https://arpan-portfolio.infy.uk/assets/cursor/text_cursor.png),
+  cursor: url(/portfolio/assets/cursor/text_cursor.png),
     auto;
 }
 .projects img,
 .projects svg {
-  cursor: url(https://arpan-portfolio.infy.uk/assets/cursor/hover_cursor.png),
+  cursor: url(/portfolio/assets/cursor/hover_cursor.png),
     auto;
 }
 .projects .projects__title {
