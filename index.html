@@ -4,69 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="assets\logo.svg" alt="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Me</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Skills</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Project</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact Me</a>
-            </li>
-          </ul>
-        </div>
+    <!-- ===================== AUDIO FX ===================== -->
 
-        <button type="button" class="btn btn-dark resume"><a class="" href="#">Resume<img src="assets\download.svg" alt="download_icon"></a></button>
+    <audio id="menu" src="assets\hover.mp3" preload="auto"></audio>
+    <audio id="unity" src="assets\whoosh-boom.mp3" preload="auto"></audio>
+    <audio id="items" src="assets\digital-button.mp3" preload="auto"></audio>
+    <audio id="game_audio" src="assets\potion.mp3" preload="auto"></audio>
+
+    <!-- ===================== NAV MENU ===================== -->
+
+    <nav class="navbar">
+            <a href="#" class="nav__logo-link">
+                <img src="assets/logo.svg" alt="Personal Portfolio Logo" class="nav__logo">
+            </a>
+    
+        <button class="nav__toggle" aria-label="Toggle navigation">
+            <svg class="nav__toggle-icon" viewBox="0 0 48 48" width="30" height="30">
+                <path d="M5.5 9A1.5 1.5 0 1 0 5.5 12L42.5 12A1.5 1.5 0 1 0 42.5 9L5.5 9zM5.5 22.5A1.5 1.5 0 1 0 5.5 25.5L42.5 25.5A1.5 1.5 0 1 0 42.5 22.5L5.5 22.5zM5.5 36A1.5 1.5 0 1 0 5.5 39L42.5 39A1.5 1.5 0 1 0 42.5 36L5.5 36z"/>
+            </svg>
+        </button>
+    
+        <div class="nav__menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About Me</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#skills" class="nav__link">Skills</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link">Projects</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-dark resume">
+            <a href="#resume" class="nav__resume">
+                Resume
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                    <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"></path>
+                </svg>
+            </a>
+        </button>
+    
+        <!-- Mobile Menu -->
+        <div class="nav__mobile">
+            <button class="nav__close" aria-label="Close navigation">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+            
+            <ul class="nav__mobile-list">
+                <li class="nav__link">
+                    <a href="#about" class="nav__mobile-link">About Me</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#skills" class="nav__mobile-link">Skills</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="nav__mobile-link">Projects</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#contact" class="nav__mobile-link">Contact Me</a>
+                </li>
+            </ul>
+            
+            <button type="button" class="btn btn-dark resume">
+                <a class="" href="#">Resume
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px">
+                        <path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/>
+                    </svg>
+                </a>
+            </button>
+        </div>
     </nav>
 
-    <section class="profile-intro">
-        <div class="profile-info">
-            <div class="headings">
-                <h1>Hello I'm <span class="bold">Arpan Hanuman.</span></h1>
-                <h1 class="bold">Website <span class="outline-effect">Developer</span></h1>
-                <h1 class="bold">Game <span class="outline-effect">Developer</span></h1>
+    <!-- ===================== HERO SECTION ===================== -->
+
+    <section id="hero" class="hero">
+        <div class="hero__content">
+            <div class="hero__headings">
+                <h1 class="hero__title">Hello I'm <span class="hero__subtitle--bold">Arpan Hanuman.</span></h1>
+                <h1 class="hero__subtitle hero__subtitle--bold">Website <span class="outline-effect">Developer</span><span class="hero__subtitle--spaced">&</span></h1>
+                <h1 class="hero__subtitle hero__subtitle--bold">Game <span class="outline-effect">Developer</span></h1>
             </div>
-            <p>I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
-            <div class="socials">
-                <a href="#"><img src="assets\mail.svg" alt=""></a>
-                <a href="#"><img src="assets\instagram.svg" alt=""></a>
-                <a href="#"><img src="assets\linedin.svg" alt=""></a>
-                <a href="#"><img src="assets\reddit.svg" alt=""></a>
+            <p class="hero__description">I'm Arpan Hanuman, a Website Developer and an aspiring Game Developer since 2019. I enjoy crafting user-friendly websites and exploring the world of game development. Passionate about learning and innovation, I continuously refine my skills to create better digital experiences.</p>
+            <div class="hero__socials">
+                <a id="1" href="#" class="hero__social-link"><img src="assets/mail.svg" alt="Email"></a>
+                <a id="2" href="#" class="hero__social-link"><img src="assets/instagram.svg" alt="Instagram"></a>
+                <a id="3" href="#" class="hero__social-link"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
+                <a id="4" href="#" class="hero__social-link"><img src="assets/reddit.svg" alt="Reddit"></a>
             </div>
         </div>
-        <div class="profile-illustration">
-            <img src="assets\dev_illu.svg" alt="">
+        <div class="hero__illustration">
+            <img src="assets/hero-illustration.svg" alt="Dev Illustration" class="hero__illustration-img">
         </div>
     </section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- ===================== SKILLS SECTION ===================== -->
+
+    <section id="skills" class="skills">
+        <h2 class="skills__title">My <span class="skills__title--emphasized">Skills</span></h2>
+        <div class="skills__grid">
+            <div id="1" class="skills__item">
+                <svg class="skills__icon" stroke="currentColor" fill="currentColor" viewBox="0 0 448 512" height="50" width="50">
+                    <path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"></path>
+                </svg>
+                <p class="skills__label">Javascript</p>
+            </div>
+            <div id="2" class="skills__item">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="50" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"></path></svg>
+                <p class="skills__label">Python</p>
+            </div>
+            <div id="3" class="skills__item">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="50" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z"></path></svg>
+                <p class="skills__label">My Sql</p>
+            </div>
+            <div id="4" class="skills__item">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 384 512" height="50" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M277.74 312.9c9.8-6.7 23.4-12.5 23.4-12.5s-38.7 7-77.2 10.2c-47.1 3.9-97.7 4.7-123.1 1.3-60.1-8 33-30.1 33-30.1s-36.1-2.4-80.6 19c-52.5 25.4 130 37 224.5 12.1zm-85.4-32.1c-19-42.7-83.1-80.2 0-145.8C296 53.2 242.84 0 242.84 0c21.5 84.5-75.6 110.1-110.7 162.6-23.9 35.9 11.7 74.4 60.2 118.2zm114.6-176.2c.1 0-175.2 43.8-91.5 140.2 24.7 28.4-6.5 54-6.5 54s62.7-32.4 33.9-72.9c-26.9-37.8-47.5-56.6 64.1-121.3zm-6.1 270.5a12.19 12.19 0 0 1-2 2.6c128.3-33.7 81.1-118.9 19.8-97.3a17.33 17.33 0 0 0-8.2 6.3 70.45 70.45 0 0 1 11-3c31-6.5 75.5 41.5-20.6 91.4zM348 437.4s14.5 11.9-15.9 21.2c-57.9 17.5-240.8 22.8-291.6.7-18.3-7.9 16-19 26.8-21.3 11.2-2.4 17.7-2 17.7-2-20.3-14.3-131.3 28.1-56.4 40.2C232.84 509.4 401 461.3 348 437.4zM124.44 396c-78.7 22 47.9 67.4 148.1 24.5a185.89 185.89 0 0 1-28.2-13.8c-44.7 8.5-65.4 9.1-106 4.5-33.5-3.8-13.9-15.2-13.9-15.2zm179.8 97.2c-78.7 14.8-175.8 13.1-233.3 3.6 0-.1 11.8 9.7 72.4 13.6 92.2 5.9 233.8-3.3 237.1-46.9 0 0-6.4 16.5-76.2 29.7zM260.64 353c-59.2 11.4-93.5 11.1-136.8 6.6-33.5-3.5-11.6-19.7-11.6-19.7-86.8 28.8 48.2 61.4 169.5 25.9a60.37 60.37 0 0 1-21.1-12.8z"></path></svg>
+                <p class="skills__label">Java</p>
+            </div>
+            <div id="5" class="skills__item">
+                <svg class="figma" stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="50" width="50" xmlns="http://www.w3.org/2000/svg"><path d="M8.5 2C6.84315 2 5.5 3.34315 5.5 5C5.5 6.65685 6.84315 8 8.5 8H15.5C17.1569 8 18.5 6.65685 18.5 5C18.5 3.34315 17.1569 2 15.5 2H8.5Z" fill="currentColor"></path><path d="M15.5 9C13.8431 9 12.5 10.3431 12.5 12C12.5 13.6569 13.8431 15 15.5 15C17.1569 15 18.5 13.6569 18.5 12C18.5 10.3431 17.1569 9 15.5 9Z" fill="currentColor"></path><path d="M5.5 12C5.5 10.3431 6.84315 9 8.5 9H11.5V15H8.5C6.84315 15 5.5 13.6569 5.5 12Z" fill="currentColor"></path><path d="M8.5 16C6.84315 16 5.5 17.3431 5.5 19C5.5 20.6569 6.84315 22 8.5 22C10.1569 22 11.5 20.6569 11.5 19V16H8.5Z" fill="currentColor"></path></svg>
+                <p class="skills__label">Figma</p>
+            </div>
+            <div id="6" class="skills__item">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="70px" height="70px"><path d="M 25 12 C 11.542969 12 1 17.710938 1 25 C 1 32.289063 11.542969 38 25 38 C 38.457031 38 49 32.289063 49 25 C 49 17.710938 38.457031 12 25 12 Z M 22.507813 16 L 25.128906 16 L 24.296875 20 L 26.636719 20 C 28.121094 20 29.117188 20.207031 29.683594 20.726563 C 30.238281 21.238281 30.40625 22.078125 30.183594 23.222656 L 29.144531 28 L 26.480469 28 L 27.4375 23.582031 C 27.554688 22.976563 27.507813 22.554688 27.304688 22.332031 C 27.101563 22.109375 26.65625 22 25.988281 22 L 23.890625 22 L 22.625 28 L 20 28 Z M 11 20 L 16.332031 20 C 18.875 20 20.414063 21.703125 19.8125 24.246094 C 19.113281 27.199219 17.238281 28 13.792969 28 L 12.144531 28 L 11.621094 31 L 8.972656 31 Z M 32 20 L 37.332031 20 C 39.875 20 41.414063 21.703125 40.8125 24.246094 C 40.113281 27.199219 38.238281 28 34.792969 28 L 33.144531 28 L 32.621094 31 L 29.972656 31 Z M 13.269531 22 L 12.515625 26 L 14.226563 26 C 15.707031 26 17.082031 25.832031 17.3125 23.625 C 17.398438 22.769531 17.042969 22 15.332031 22 Z M 34.269531 22 L 33.515625 26 L 35.226563 26 C 36.707031 26 38.082031 25.832031 38.3125 23.625 C 38.398438 22.769531 38.042969 22 36.332031 22 Z"/></svg>
+                <p class="skills__label">PHP</p>
+            </div>
+            <div id="7" class="skills__item">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="70px" height="70px" fill-rule="evenodd"><g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M22.903,3.286c0.679,-0.381 1.515,-0.381 2.193,0c3.355,1.883 13.451,7.551 16.807,9.434c0.679,0.38 1.097,1.084 1.097,1.846c0,3.766 0,15.101 0,18.867c0,0.762 -0.418,1.466 -1.097,1.847c-3.355,1.883 -13.451,7.551 -16.807,9.434c-0.679,0.381 -1.515,0.381 -2.193,0c-3.355,-1.883 -13.451,-7.551 -16.807,-9.434c-0.678,-0.381 -1.096,-1.084 -1.096,-1.846c0,-3.766 0,-15.101 0,-18.867c0,-0.762 0.418,-1.466 1.097,-1.847c3.354,-1.883 13.452,-7.551 16.806,-9.434z" fill="#000000"></path><path d="M5.304,34.404c-0.266,-0.356 -0.304,-0.694 -0.304,-1.149c0,-3.744 0,-15.014 0,-18.759c0,-0.758 0.417,-1.458 1.094,-1.836c3.343,-1.872 13.405,-7.507 16.748,-9.38c0.677,-0.379 1.594,-0.371 2.271,0.008c3.343,1.872 13.371,7.459 16.714,9.331c0.27,0.152 0.476,0.335 0.66,0.576z" fill="#000000"></path><path d="M24,10c7.727,0 14,6.273 14,14c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-7.727 6.273,-14 14,-14zM24,17c3.863,0 7,3.136 7,7c0,3.863 -3.137,7 -7,7c-3.863,0 -7,-3.137 -7,-7c0,-3.864 3.136,-7 7,-7z" fill="#ffffff"></path><path d="M42.485,13.205c0.516,0.483 0.506,1.211 0.506,1.784c0,3.795 -0.032,14.589 0.009,18.384c0.004,0.396 -0.127,0.813 -0.323,1.127l-19.084,-10.5z" fill="#000000"></path></g></g></svg>
+                <p class="skills__label">C</p>
+            </div>
+            <div id="8" class="skills__item">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="70px" height="70px"><path d="M 44.082031 25.207031 L 46.902344 20.429688 C 47.015625 20.191406 47.03125 19.917969 46.945313 19.671875 L 41.359375 3.671875 C 41.1875 3.183594 40.675781 2.90625 40.179688 3.027344 L 23.761719 7.027344 C 23.449219 7.105469 23.191406 7.328125 23.070313 7.628906 L 21.324219 12 L 16 12 C 15.722656 12 15.453125 12.117188 15.265625 12.320313 L 3.265625 25.320313 C 2.894531 25.722656 2.914063 26.347656 3.308594 26.722656 L 15.894531 38.722656 C 16.078125 38.902344 16.328125 39 16.582031 39 L 22.320313 39 L 24.070313 43.371094 C 24.199219 43.695313 24.488281 43.925781 24.828125 43.984375 L 42.289063 46.984375 C 42.34375 46.996094 42.402344 47 42.457031 47 C 42.921875 47 43.332031 46.679688 43.433594 46.214844 L 46.976563 29.984375 C 47.03125 29.734375 46.988281 29.472656 46.851563 29.25 Z M 21.324219 12 L 35.417969 9.417969 L 28 24 L 11.167969 24 Z M 22.324219 39 L 11.167969 28 L 28 28 L 36.75 41.167969 Z M 40.386719 38.898438 L 32 26 L 39.332031 11.417969 L 44.082031 25.210938 Z"/></svg>
+                <p class="skills__label">Unity</p>
+            </div>
+            <div id="9" class="skills__item">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="70px" height="70px" fill-rule="nonzero"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M22.903,3.286c0.679,-0.381 1.515,-0.381 2.193,0c3.355,1.883 13.451,7.551 16.807,9.434c0.679,0.38 1.097,1.084 1.097,1.846c0,3.766 0,15.101 0,18.867c0,0.762 -0.418,1.466 -1.097,1.847c-3.355,1.883 -13.451,7.551 -16.807,9.434c-0.679,0.381 -1.515,0.381 -2.193,0c-3.355,-1.883 -13.451,-7.551 -16.807,-9.434c-0.678,-0.381 -1.096,-1.084 -1.096,-1.846c0,-3.766 0,-15.101 0,-18.867c0,-0.762 0.418,-1.466 1.097,-1.847c3.354,-1.883 13.452,-7.551 16.806,-9.434z" fill="#000000"></path><path d="M5.304,34.404c-0.266,-0.356 -0.304,-0.694 -0.304,-1.149c0,-3.744 0,-15.014 0,-18.759c0,-0.758 0.417,-1.458 1.094,-1.836c3.343,-1.872 13.405,-7.507 16.748,-9.38c0.677,-0.379 1.594,-0.371 2.271,0.008c3.343,1.872 13.371,7.459 16.714,9.331c0.27,0.152 0.476,0.335 0.66,0.576z" fill="#000000"></path><path d="M24,10c-7.73,0 -14,6.27 -14,14c0,7.73 6.27,14 14,14c7.73,0 14,-6.27 14,-14c0,-7.73 -6.27,-14 -14,-14zM24,31c-3.86,0 -7,-3.14 -7,-7c0,-3.86 3.14,-7 7,-7c3.86,0 7,3.14 7,7c0,3.86 -3.14,7 -7,7z" fill="#ffffff"></path><path d="M42.485,13.205c0.516,0.483 0.506,1.211 0.506,1.784c0,3.795 -0.032,14.589 0.009,18.384c0.004,0.396 -0.127,0.813 -0.323,1.127l-19.084,-10.5z" fill="#000000"></path><path d="M34,20h1v8h-1zM37,20h1v8h-1z" fill="#ffffff"></path><path d="M32,25h8v1h-8zM32,22h8v1h-8z" fill="#ffffff"></path></g></g></svg>
+                <p class="skills__label">C#</p>
+            </div>
+            <div id="10" class="skills__item">
+                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="70px" height="70px">    <path d="M25,2C12.317,2,2,12.318,2,25s10.317,23,23,23s23-10.318,23-23S37.683,2,25,2z M25,7c4.26,0,8.166,1.485,11.247,3.955 c-0.956,0.636-1.547,1.74-1.547,2.945c0,1.6,0.9,3,1.9,4.6c0.8,1.3,1.6,3,1.6,5.4c0,1.7-0.5,3.8-1.5,6.4l-2,6.6l-7.1-21.2 c1.2-0.1,2.3-0.2,2.3-0.2c1-0.1,0.9-1.6-0.1-1.6c0,0,0,0-0.1,0c0,0-3.2,0.3-5.3,0.3c-1.9,0-5.2-0.3-5.2-0.3s0,0-0.1,0 c-1,0-1.1,1.6-0.1,1.6c0,0,1,0.1,2.1,0.2l3.1,8.4L19.9,37l-7.2-21.4c1.2-0.1,2.3-0.2,2.3-0.2c1-0.1,0.9-1.6-0.1-1.6c0,0,0,0-0.1,0 c0,0-2.152,0.202-4.085,0.274C14.003,9.78,19.168,7,25,7z M7,25c0-1.8,0.271-3.535,0.762-5.174l7.424,20.256 C10.261,36.871,7,31.323,7,25z M19.678,42.2L25,26.6l5.685,15.471C28.897,42.665,26.989,43,25,43 C23.147,43,21.36,42.719,19.678,42.2z M35.304,39.75L35.304,39.75L40.6,24.4c0.786-2,1.21-3.742,1.39-5.304 C42.633,20.947,43,22.928,43,25C43,31.111,39.954,36.497,35.304,39.75z"/></svg>
+                <p class="skills__label">Wordpress</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+
+    <section id="about" class="about">
+        <div class="about__illustration">
+            <img src="assets/about-me-illustration.svg" alt="illustration" class="about__image">
+        </div>
+        <div class="about__content">
+            <h2 class="about__title">About <span class="about__title--emphasized">Me</span></h2>
+            <div class="about__text">
+                <p class="about__paragraph">I'm a self-taught Website & Game Developer with a passion for crafting fast, user-friendly, and efficient digital solutions. My journey began in 2019, and since then, I've built engaging websites and explored game development, constantly pushing my skills to new heights.</p>
+                <p class="about__paragraph">In 2020, I created my first game, Fruit Man, as a beginner project, and I continue to grow in the game development space. On the web development side, I have worked with local wholesale shopkeepers, creating both static and eCommerce websites tailored to their business needs.</p>
+                <p class="about__paragraph">My specialty? Speed and ease of use. I develop high-performance websites and specialize in WordPress, allowing my clients to manage their content effortlessly without needing a developer every time they make an update.</p>
+                <p class="about__paragraph">If you need a fast, user-friendly, and fully optimized website, let's work together to bring your vision to life!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECT SECTION ===================== -->
+
+    <section id="projects" class="projects">
+        <h2 class="projects__title">My <span class="projects__title--emphasized">Projects</span></h2>
+        <div class="projects__item projects__item--left">
+            <div class="projects__media">
+                <img src="assets/game.png" alt="Fruit Man 2D Platformer Game screenshot" class="projects__image">
+            </div>
+            <div class="projects__content">
+                <h2 class="projects__number">01</h2>
+                <p class="projects__name">Fruit Man – A 2D Platformer Game 🎮</p>
+                <p class="projects__description">I developed Fruit Man using Unity, my first step into game development. It's a vibrant 2D platformer featuring bright music and engaging obstacles that challenge players to reach the finish line. This project strengthened my skills in game mechanics, level design, and Unity development.</p>
+            </div>
+        </div>
+        <div class="projects__item projects__item--right">
+            <div class="projects__media">
+                <div class="projects__placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="projects__icon">
+                        <path d="M44.082 25.207L46.902 20.43c.113-.238.129-.512.043-.758L41.359 3.671c-.172-.488-.684-.765-1.18-.644L23.762 7.027c-.312.078-.57.301-.691.601L21.325 12H16c-.278 0-.547.117-.735.32L3.266 25.32c-.371.402-.351 1.027.043 1.402L15.895 38.722c.184.18.434.278.688.278h5.738l1.75 4.371c.129.324.418.554.758.613l17.461 3c.055.012.113.016.168.016.465 0 .875-.321.976-.786l3.543-16.215c.055-.25.012-.512-.125-.734zM21.324 12L35.418 9.418 28 24H11.168l11.156-12zm1 27L11.168 28 28 28l8.75 13.168zM40.387 38.898L32 26l7.332-13.582 4.75 13.793z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="projects__content">
+                <span class="projects__number">02</span>
+                <p class="projects__name">Coming Soon 🌟</p>
+                <p class="projects__description">I'm currently working on a 2D adventure game featuring a stunning art style and an immersive storyline. This project focuses on exploration, engaging gameplay, and rich storytelling, bringing players into a captivating world filled with challenges and discoveries. Stay tuned for more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT SECTION ===================== -->
+
+    <section id="contact" class="contact">
+        <h2 class="contact__title">Contact <span class="contact__title--emphasized">Me</span></h2>
+        <div class="contact__container">
+            <div class="contact__form-wrapper">
+                <form class="contact__form">
+                    <input class="contact__input" placeholder="Your name" required type="text">
+                    <input class="contact__input" placeholder="Email" required type="email">
+                    <input class="contact__input" placeholder="Your website (If exists)" type="text">
+                    <textarea class="contact__textarea" placeholder="How can I help?*" required></textarea>
+                    <div class="contact__actions">
+                        <button class="contact__submit" type="submit">Get In Touch</button>
+                        <div class="contact__socials">
+                            <a id="1" href="mailto:youremail@gmail.com" class="contact__social-link" tabindex="0">
+                                <svg class="contact__social-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m18.73 5.41-1.28 1L12 10.46 6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64z"></path>
+                                </svg>
+                            </a>
+                            <a id="2" href="#" class="contact__social-link">
+                                <svg class="contact__social-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"></path>
+                                </svg>
+                            </a>
+                            <a id="3" href="#" class="contact__social-link">
+                                <svg class="contact__social-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M496 109.5a201.8 201.8 0 0 1-56.55 15.3 97.51 97.51 0 0 0 43.33-53.6 197.74 197.74 0 0 1-62.56 23.5A99.14 99.14 0 0 0 348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 0 0 2.54 22.1 280.7 280.7 0 0 1-203-101.3A95.69 95.69 0 0 0 36 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0 1 35.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 0 1-25.94 3.4 94.38 94.38 0 0 1-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0 1 39.5 405.6a203 203 0 0 1-23.5-1.4A278.68 278.68 0 0 0 166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 0 0 496 109.5z"></path>
+                                </svg>
+                            </a>
+                            <a id="4" href="#" class="contact__social-link">
+                                <svg class="contact__social-icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="contact__info">
+                <div class="contact__info-heading">
+                    <h2 class="contact__info-title">Let's <span class="outline-effect">talk</span> for</h2>
+                    <p class="contact__info-subtitle">Something special</p>
+                </div>
+                <p class="contact__info-description">I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
+                <div class="contact__details">
+                    <a href="mailto:youremail@gmail.com" class="contact__detail-link">
+                        <span class="contact__detail-icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-4 h-4 lg:w-5 lg:h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M437.332 80H74.668C51.199 80 32 99.198 32 122.667v266.666C32 412.802 51.199 432 74.668 432h362.664C460.801 432 480 412.802 480 389.333V122.667C480 99.198 460.801 80 437.332 80zM432 170.667L256 288 80 170.667V128l176 117.333L432 128v42.667z"></path>
+                            </svg>
+                        </span>
+                        <span>rhythmofgrace7@gmail.com</span>
+                    </a>
+                    <a href="tel:1234567890" class="contact__detail-link">
+                        <span class="contact__detail-icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="w-3 h-3 lg:w-4 lg:h-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"></path>
+                            </svg>
+                        </span>
+                        <span>+91 8260248392</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER 🦶 ===================== -->
+
+    <footer class="footer">
+        <img src="assets/logo-white.svg" alt="Portfolio logo" class="footer__logo">
+        
+        <div class="footer__content">
+            <p class="footer__copyright">© 2025 Personal Portfolio</p>
+            <p class="footer__author">Made by -Rhythm</p>
+        </div>
+    </footer>
+<script src="index.js"></script>
 </body>
 
 </html>
