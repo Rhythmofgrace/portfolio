@@ -555,6 +555,9 @@ span.contact__detail-icon {
   }
 }
 @media (max-width: 768px) {
+  .sound__popup{
+    display: none;
+  }
   .contact__actions,
   .contact__container {
     flex-direction: column;
