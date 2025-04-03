@@ -36,6 +36,7 @@ class UnityAudioController {
 document.addEventListener('DOMContentLoaded', () => {
 const soundPopup = document.getElementById('soundPopup');
 const closePopup = document.getElementById('closePopup');
+const enableSound = document.getElementById('enableSound');
 
 // Show popup after 2 seconds
 setTimeout(() => {
@@ -44,6 +45,11 @@ setTimeout(() => {
 
 // Close button handler
 closePopup.addEventListener('click', () => {
+  soundPopup.style.right = '';
+});
+  new UnityAudioController();
+});
+enableSound.addEventListener('click', () => {
   soundPopup.style.right = '';
 });
   new UnityAudioController();
