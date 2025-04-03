@@ -38,6 +38,7 @@ const soundPopup = document.getElementById('soundPopup');
 const closePopup = document.getElementById('closePopup');
 const enableSound = document.getElementById('enableSound');
 
+
 // Show popup after 2 seconds
 setTimeout(() => {
   soundPopup.style.right = '0';
@@ -47,13 +48,14 @@ setTimeout(() => {
 closePopup.addEventListener('click', () => {
   soundPopup.style.right = '';
 });
-  new UnityAudioController();
-});
+
 enableSound.addEventListener('click', () => {
   soundPopup.style.right = '';
 });
+
   new UnityAudioController();
 });
+
 
 // Shared utility function
 function createPlayOnce(audioElement) {
